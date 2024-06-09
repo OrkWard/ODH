@@ -1,0 +1,12 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "dictionaryDefinitions": [
+    {
+      "name": "project-words",
+      "path": "./dictionary.txt",
+      "addWords": true
+    }
+  ],
+  "dictionaries": ["project-words"],
+  "words": ["Anki", "ankiconnect", "ankiweb", "encn", "enen", "Youdao"]
+}
