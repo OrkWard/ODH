@@ -64,7 +64,7 @@ export class SwitchField extends LitElement {
 @customElement("select-field")
 export class SelectField extends LitElement {
   override render() {
-    return html``;
+    return html`select`;
   }
 }
 
