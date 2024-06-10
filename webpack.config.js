@@ -5,7 +5,7 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 // @ts-check
 /** @type {import ('webpack').Configuration;} */
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: "./src/popup.ts",
   output: {
     path: path.resolve(__dirname, "dist"),

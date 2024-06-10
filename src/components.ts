@@ -36,10 +36,12 @@ export class PanelContent extends LitElement {
     :host {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 7px;
 
       border-radius: 0 0 5px 5px;
       padding: 7px;
+      background-color: #f1f8e9;
     }
   `;
 
@@ -50,11 +52,45 @@ export class PanelContent extends LitElement {
 
 @customElement("switch-field")
 export class SwitchField extends LitElement {
+  static override styles = css`
+    :host {
+      display: flex;
+      flex-flow: row nowrap;
+
+      gap: 10px;
+    }
+
+    button {
+      width: 48px;
+      height: 16px;
+      border-radius: 831px;
+      padding: 2px 3px;
+      background-color: #555;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    span {
+      width: 24px;
+      height: 12px;
+      border-radius: 831px;
+      background-color: #76ff03;
+    }
+
+    button::before {
+      content: "On";
+      color: #76ff03;
+      text-align: center;
+    }
+  `;
   @property()
   accessor fieldName: string = "";
 
   override render() {
-    return html`<p>${this.fieldName}</p>`;
+    return html`<div>${localize(this.fieldName)}</div>
+      <button><span></span></button>`;
   }
 }
 

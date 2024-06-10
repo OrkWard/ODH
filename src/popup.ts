@@ -4,6 +4,18 @@ import "./components";
 
 @customElement("action-popup")
 export class Popup extends LitElement {
+  static override styles = css`
+    :host {
+      /* display: block; */
+    }
+
+    #more {
+      all: unset;
+
+      cursor: pointer;
+    }
+  `;
+
   override render() {
     return html`<panel-header panelTitle="baTitle">
         <button id="more">...</button>
