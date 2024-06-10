@@ -1,12 +1,18 @@
-import { LitElement, html } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { LitElement, css, html } from "lit";
+import { customElement } from "lit/decorators.js";
+import "./components";
 
 @customElement("action-popup")
 export class Popup extends LitElement {
   override render() {
-    return html`<panel-header>
-        <select-field></select-field> </panel-header
-      ><panel-content></panel-content>`;
+    return html`<panel-header panelTitle="baTitle">
+        <button id="more">...</button>
+      </panel-header>
+      <panel-content>
+        <switch-field fieldName="baEnabled"></switch-field>
+        <switch-field fieldName="baMouseselection"></switch-field>
+        <select-field></select-field>
+      </panel-content>`;
   }
 }
 

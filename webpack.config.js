@@ -5,18 +5,17 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 // @ts-check
 /** @type {import ('webpack').Configuration;} */
 module.exports = {
-  mode: "production",
+  mode: "development",
   entry: "./src/popup.ts",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
+    clean: true,
   },
   resolve: {
     extensions: [".js", ".ts"],
   },
-  node: {
-    global: false,
-  },
+  devtool: "source-map",
   module: {
     rules: [
       {

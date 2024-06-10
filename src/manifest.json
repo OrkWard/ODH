@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "__MSG_appName__",
   "version": "0.9.5",
   "default_locale": "en",
@@ -9,22 +9,16 @@
     "48": "img/icon48.png",
     "128": "img/icon128.png"
   },
-  "browser_action": {
+  "action": {
     "default_icon": {
-      "19": "img/icon19.png",
+      "16": "img/icon16.png",
       "38": "img/icon38.png"
     },
     "default_popup": "popup.html"
   },
   "author": "Zhenyu Huang, OrkWard",
   "minimum_chrome_version": "50.0.0.0",
-  "permissions": [
-    "webRequest",
-    "webRequestBlocking",
-    "https://ankiweb.net/*",
-    "https://ankiuser.net/*",
-    "storage"
-  ],
+  "permissions": ["webRequest", "storage"],
   "commands": {
     "enabled": {
       "suggested_key": {

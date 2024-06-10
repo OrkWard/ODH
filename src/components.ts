@@ -1,10 +1,11 @@
-import { LitElement, html, css, type CSSResultGroup } from "lit";
+import { LitElement, html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
+import { localize } from "./utils";
 
 @customElement("panel-header")
 export class PanelHeader extends LitElement {
   static override styles = css`
-    div {
+    :host {
       padding: 2px 10px;
       display: flex;
       align-items: center;
@@ -19,42 +20,38 @@ export class PanelHeader extends LitElement {
   `;
 
   @property()
-  panelTitle: string = "";
+  accessor panelTitle: string = "";
 
   override render() {
-    return html`<div>
-      <span data-i18n="${this.panelTitle}"></span>
+    return html`
+      <span>${localize(this.panelTitle)}</span>
       <slot></slot>
-    </div>`;
+    `;
   }
 }
 
 @customElement("panel-content")
 export class PanelContent extends LitElement {
   static override styles = css`
-    div {
+    :host {
       display: flex;
-      padding: 7px;
       flex-direction: column;
       gap: 7px;
+
       border-radius: 0 0 5px 5px;
+      padding: 7px;
     }
   `;
 
   override render() {
-    return html`<div><slot></slot></div>`;
+    return html`<slot></slot>`;
   }
 }
 
 @customElement("switch-field")
 export class SwitchField extends LitElement {
-  constructor() {
-    super();
-    this.fieldName = "";
-  }
-
   @property()
-  fieldName?: string;
+  accessor fieldName: string = "";
 
   override render() {
     return html`<p>${this.fieldName}</p>`;
@@ -71,6 +68,8 @@ export class SelectField extends LitElement {
 declare global {
   interface HTMLElementTagNameMap {
     "switch-field": SwitchField;
+    "select-field": SelectField;
     "panel-header": PanelHeader;
+    "panel-content": PanelContent;
   }
 }
